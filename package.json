@@ -1,0 +1,14 @@
+{
+  "name": "bayit-assistant",
+  "version": "1.0.0",
+  "description": "עוזר ביתי פשוט לזוג – משימות, קניות ותזכורות, עם טון חם ויומיומי.",
+  "private": true,
+  "scripts": {
+    "start": "npx serve -l 5173 .",
+    "build": "echo \"No build step needed\"",
+    "lint": "echo \"No linter configured\""
+  },
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}

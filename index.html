@@ -1,0 +1,215 @@
+﻿<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>הבית שלנו</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="eyebrow">המרחב הזוגי שלכם</span>
+            <h1>הבית שלנו</h1>
+            <p class="subtitle">
+              מקום קטן, נעים ומסודר לשניכם. כל המשימות, הקניות והתזכורות במקום
+              אחד, כדי שהיומיום ירגיש פשוט יותר.
+            </p>
+            <div class="hero-actions">
+              <a href="#weekly-summary" class="summary-link">לסיכום השבוע</a>
+            </div>
+            <div class="hero-notes">
+              <div class="note-chip">ניהול בית משותף</div>
+              <div class="note-chip">רשימות שמתעדכנות מהר</div>
+              <div class="note-chip">תזכורות קטנות עם לב גדול</div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <img
+              src="./images/house-hero.png"
+              alt="איור של בית חמים ונעים"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel panel--tasks" data-section="tasks">
+          <div class="panel-header">
+            <div>
+              <span class="panel-kicker">לעשות יחד</span>
+              <h2>משימות לבית</h2>
+            </div>
+            <span class="panel-badge">סדר יומי</span>
+          </div>
+
+          <form class="item-form" data-form="task">
+            <input
+              type="text"
+              name="title"
+              placeholder="מה צריך להספיק היום?"
+              autocomplete="off"
+              required
+            />
+            <input
+              type="date"
+              name="date"
+              class="time-input"
+              aria-label="תאריך למשימה"
+            />
+            <input
+              type="time"
+              name="time"
+              class="time-input"
+              aria-label="שעה למשימה"
+            />
+            <select name="owner" class="owner-select" required aria-label="למי המשימה מיועדת">
+              <option value="">למי זה מיועד?</option>
+              <option value="יניב">יניב</option>
+              <option value="פז">פז</option>
+            </select>
+            <button type="submit">הוספה</button>
+          </form>
+
+          <p class="empty-text" data-empty="tasks">
+            אין כרגע משימות פתוחות, וזה דווקא סימן טוב.
+          </p>
+
+          <ul class="item-list" id="task-list"></ul>
+        </section>
+
+        <section class="panel panel--shopping" data-section="shopping">
+          <div class="panel-header">
+            <div>
+              <span class="panel-kicker">לפני שיוצאים</span>
+              <h2>רשימת קניות</h2>
+            </div>
+            <span class="panel-badge">סופר חכם</span>
+          </div>
+
+          <form class="item-form" data-form="shopping">
+            <input
+              type="text"
+              name="title"
+              placeholder="מה חסר בבית?"
+              autocomplete="off"
+              required
+            />
+            <select name="owner" class="owner-select" required aria-label="למי הפריט מיועד">
+              <option value="">למי זה מיועד?</option>
+              <option value="יניב">יניב</option>
+              <option value="פז">פז</option>
+            </select>
+            <button type="submit">הוספה</button>
+          </form>
+
+          <p class="empty-text" data-empty="shopping">
+            הרשימה ריקה כרגע. אולי זה הזמן לפינוק קטן.
+          </p>
+
+          <ul class="item-list" id="shopping-list"></ul>
+        </section>
+
+        <section class="panel panel--reminders" data-section="reminders">
+          <div class="panel-header">
+            <div>
+              <span class="panel-kicker">לא לשכוח</span>
+              <h2>תזכורות</h2>
+            </div>
+            <span class="panel-badge">ברגע הנכון</span>
+          </div>
+
+          <form class="item-form" data-form="reminder">
+            <input
+              type="text"
+              name="title"
+              placeholder="על מה להזכיר לשניכם?"
+              autocomplete="off"
+              required
+            />
+            <input
+              type="time"
+              name="time"
+              class="time-input"
+              aria-label="שעה לתזכורת"
+            />
+            <select name="day" class="owner-select" required aria-label="יום לתזכורת">
+              <option value="">באיזה יום?</option>
+              <option value="0">ראשון</option>
+              <option value="1">שני</option>
+              <option value="2">שלישי</option>
+              <option value="3">רביעי</option>
+              <option value="4">חמישי</option>
+              <option value="5">שישי</option>
+              <option value="6">שבת</option>
+            </select>
+            <select name="owner" class="owner-select" required aria-label="למי התזכורת מיועדת">
+              <option value="">למי זה מיועד?</option>
+              <option value="יניב">יניב</option>
+              <option value="פז">פז</option>
+            </select>
+            <button type="submit">הוספה</button>
+          </form>
+
+          <p class="empty-text">
+            כדי לקבל הודעת דפדפן בזמן שנקבע, צריך לאשר התראות בפעם הראשונה.
+          </p>
+
+          <p class="empty-text" data-empty="reminders">
+            אין כרגע תזכורות. שקט מבורך.
+          </p>
+
+          <ul class="item-list" id="reminder-list"></ul>
+        </section>
+      </main>
+
+      <section class="weekly-summary panel" id="weekly-summary">
+        <div class="panel-header weekly-summary__header">
+          <div>
+            <span class="panel-kicker">מבט אחד קדימה</span>
+            <h2>לוח שעות שבועי</h2>
+          </div>
+          <span class="panel-badge">שבוע מסודר</span>
+        </div>
+
+        <p class="empty-text weekly-summary__text">
+          התזכורות מסודרות לפי ימים ושעות, ובתחתית תראה גם את משימות השבוע שעוד פתוחות.
+        </p>
+
+        <div class="schedule-board-wrap">
+          <table class="schedule-board">
+            <thead>
+              <tr>
+                <th>שעה</th>
+                <th>ראשון</th>
+                <th>שני</th>
+                <th>שלישי</th>
+                <th>רביעי</th>
+                <th>חמישי</th>
+                <th>שישי</th>
+                <th>שבת</th>
+              </tr>
+            </thead>
+            <tbody id="weekly-summary-body"></tbody>
+          </table>
+        </div>
+
+        <div class="weekly-tasks">
+          <div class="weekly-tasks__header">
+            <h3>משימות לשבוע</h3>
+            <span class="panel-badge">ללא שעה</span>
+          </div>
+          <div class="weekly-task-list" id="weekly-task-list"></div>
+        </div>
+      </section>
+
+      <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
